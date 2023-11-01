@@ -1,7 +1,4 @@
 let originalImg;
-let replaceColorsButton;
-let randomizeColorsButton;
-
 
 function preload() {
   originalImg = loadImage("Mondriaan.jpeg"); // Replace with the path to your image
@@ -25,6 +22,7 @@ function isRedSimilar(redA, greenA, blueA, redB, greenB, blueB){
   }
   return false
 }
+
 
 function isSimilar(redA, greenA, blueA, redB, greenB, blueB){
   let SIMILARITY_VALUE = 100;
@@ -55,7 +53,7 @@ function draw() {
       if (isSimilar(redVal, greenVal, blueVal, red(cp.color()), green(cp.color()), blue(cp.color()))) {
         mImg.pixels[pixelIndex] = 0; // Set red component to slider
         mImg.pixels[pixelIndex + 1] = 255; // Set green component
-        mImg.pixels[pixelIndex + 2] = 0; // Set blue component
+        mImg.pixels[pixelIndex + 2] = randomizeColorsButton; // Set blue component
       }
 
     }
